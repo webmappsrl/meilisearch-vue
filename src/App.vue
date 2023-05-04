@@ -8,7 +8,7 @@
       <template v-slot:item="{ item }">
         <p><strong>{{ item.name }}</strong></p>
         <div>Member: {{ item.member_name }} ({{ item.member_acronym }})</div>
-        <a :href="'https://'+item.url" target="_blank">Link</a>
+        <a :href="item.url" target="_blank">Link</a>
       </template>
     </ais-hits>
     <ais-pagination />
