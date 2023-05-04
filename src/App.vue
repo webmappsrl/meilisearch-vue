@@ -12,26 +12,22 @@
   </ais-instant-search>
 </template>
 
-<script>
+<script setup>
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 import "instantsearch.css/themes/algolia-min.css";
 
+const env = import.meta.env;
 
-export default {
-  data() {
-    return {
-      searchClient: instantMeiliSearch(
-        "http://meilisearch.local",
-        "masterKey"
-      ),
-    };
-  },
-};
+const searchClient = instantMeiliSearch(
+  env.VITE_MEILISEARCH_URL,
+  env.VITE_MEILISEARCH_API_KEY
+)
+
 </script>
 
 
 <style>
-  pre {
-    background-color: white;
+  * {
+    color: white;
   }
 </style>
