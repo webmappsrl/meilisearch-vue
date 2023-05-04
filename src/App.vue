@@ -6,9 +6,12 @@
     <ais-search-box />
     <ais-hits>
       <template v-slot:item="{ item }">
-        <pre>{{ item.official_name }}</pre>
+        <p><strong>{{ item.name }}</strong></p>
+        <div>Member: {{ item.member_name }} ({{ item.member_acronym }})</div>
+        <a :href="'https://'+item.url" target="_blank">Link</a>
       </template>
     </ais-hits>
+    <ais-pagination />
   </ais-instant-search>
 </template>
 
@@ -20,14 +23,9 @@ const env = import.meta.env;
 
 const searchClient = instantMeiliSearch(
   env.VITE_MEILISEARCH_URL,
-  env.VITE_MEILISEARCH_API_KEY
-)
-
-</script>
-
-
-<style>
-  * {
-    color: white;
+  env.VITE_MEILISEARCH_API_KEY,
+  {
+    finitePagination: true,
   }
-</style>
+)
+</script>
