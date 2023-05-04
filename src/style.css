@@ -8,6 +8,19 @@
 }
 #app a:hover {
   color: #535bf2;
+  text-decoration: underline;
+}
+#app .ais-SearchBox {
+  padding-bottom: 30px;
+}
+#app .ais-SearchBox-input {
+  padding: 0.3rem 3.7rem;
+}
+#app .ais-Pagination-item--selected a {
+  color: white;
+}
+#app .ais-Pagination {
+  padding-top: 50px;
 }
 
 #app button {
