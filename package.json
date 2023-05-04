@@ -1,0 +1,21 @@
+{
+  "name": "meilisearch-vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@meilisearch/instant-meilisearch": "^0.13.0",
+    "instantsearch.css": "^8.0.0",
+    "vue": "^3.2.47",
+    "vue-instantsearch": "^4.9.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "vite": "^4.3.2"
+  }
+}
