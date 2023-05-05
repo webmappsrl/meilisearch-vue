@@ -22,8 +22,8 @@ import "instantsearch.css/themes/algolia-min.css";
 const env = import.meta.env;
 
 const searchClient = instantMeiliSearch(
-  env.VITE_MEILISEARCH_URL,
-  env.VITE_MEILISEARCH_API_KEY,
+  env.VITE_MEILISEARCH_URL_LOCAL,
+  env.VITE_MEILISEARCH_API_KEY_LOCAL,
   {
     finitePagination: true,
   }

@@ -61,3 +61,9 @@
     background-color: #f9f9f9;
   }
 }
+
+@media screen and (max-width:767px) {
+  #app .ais-Hits-item {
+    width: calc(100% - 1rem);
+  }
+}

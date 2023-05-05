@@ -3,6 +3,6 @@ import App from './App.vue'
 import './style.css'
 import InstantSearch from 'vue-instantsearch/vue3/es';
 
-createApp(App,{props: ["index"]})
+createApp(App)
     .use(InstantSearch)
     .mount('#app')
