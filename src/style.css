@@ -49,8 +49,15 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
   text-align: center;
+}
+#app h2 {
+  text-align: left;
+}
+#app li {
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,5 +72,12 @@
 @media screen and (max-width:767px) {
   #app .ais-Hits-item {
     width: calc(100% - 1rem);
+  }
+}
+@media screen and (min-width:768px) {
+  #app .search-panel {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-column-gap: 20px;
   }
 }
