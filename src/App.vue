@@ -26,8 +26,8 @@ const env = import.meta.env;
 const index = document.getElementById('app').dataset.index;
 
 const searchClient = instantMeiliSearch(
-  env.VITE_MEILISEARCH_URL_LOCAL,
-  env.VITE_MEILISEARCH_API_KEY_LOCAL,
+  env.VITE_MEILISEARCH_URL,
+  env.VITE_MEILISEARCH_API_KEY,
   {
     finitePagination: true,
   }
