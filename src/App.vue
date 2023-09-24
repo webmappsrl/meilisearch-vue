@@ -1,38 +1,33 @@
 <template>
   <ais-instant-search
     :search-client="searchClient"
-    index-name="huts"
+    :index-name="index"
   >
-    <div class="search-panel">
-      <div class="filter-panel">
-        <h2>Members</h2>
-        <ais-refinement-list attribute="member_name" />
-      </div>
-      <div class="result-panel">
-        <ais-search-box />
-        <ais-hits>
-          <template v-slot:item="{ item }">
-            <p><strong>{{ item.name }}</strong></p>
-            <div>Elevation: {{ item.elevation }} m</div>
-            <div>Member: {{ item.member_name }} ({{ item.member_acronym }})</div>
-            <a :href="item.url" target="_blank">Link</a>
-          </template>
-        </ais-hits>
-      </div>
-    </div>
-    <ais-pagination />
-  </ais-instant-search>
+  <div v-if="index === 'huts'">
+    <HutsComponent :item="item"/>
+  </div>
+  <div v-else-if="index === 'trails'">
+    <TrailsComponent :item="item"/>
+  </div>
+  <div v-else-if="index === 'climbing_rock_areas'">
+    <CragsComponent :item="item"/>
+  </div>
+ </ais-instant-search>
 </template>
 
 <script setup>
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 import "instantsearch.css/themes/algolia-min.css";
+import HutsComponent from "./components/HutsComponent.vue";
+import TrailsComponent from "./components/TrailsComponent.vue";
+import CragsComponent from "./components/CragsComponent.vue";
 
 const env = import.meta.env;
+const index = document.getElementById('app').dataset.index;
 
 const searchClient = instantMeiliSearch(
-  env.VITE_MEILISEARCH_URL,
-  env.VITE_MEILISEARCH_API_KEY,
+  env.VITE_MEILISEARCH_URL_LOCAL,
+  env.VITE_MEILISEARCH_API_KEY_LOCAL,
   {
     finitePagination: true,
   }
