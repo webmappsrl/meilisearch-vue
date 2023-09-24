@@ -85,4 +85,23 @@
     grid-template-columns: 25% 75%;
     grid-column-gap: 20px;
   }
+
+  .database-search-menu {
+    display: flex;
+  }
+  .database-search-menu ul.bullet-list {
+    display: flex;
+  }
+  .database-search-menu ul.bullet-list a {
+    border: 1px solid #eceaea;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .database-search-menu a.nav-link.li-active {
+    background-color: #55c0ef!important;
+    color: white;
+    border: 1px solid #55c0ef!important;
+}
 }
